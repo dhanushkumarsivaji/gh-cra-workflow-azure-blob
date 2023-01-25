@@ -1,0 +1,30 @@
+name: deploy-accounts
+
+on:
+  push:
+    branches:
+      - master
+env:
+  STORAGE_ACCOUNT: 'mfegh2023'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
+
+      - uses: azure/login@v1
+        with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Upload to the storage account
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.0.72
+          inlineScript: |
+              az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}
+      - name: logout
+        run: |
+              az logout
