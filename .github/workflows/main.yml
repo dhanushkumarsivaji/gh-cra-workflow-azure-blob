@@ -25,7 +25,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-              az account set -s ${{}}
+              az account set -s ${{env.AZURE_SUBSCRIPTION_ID}}
               az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}
       - name: logout
         run: |
