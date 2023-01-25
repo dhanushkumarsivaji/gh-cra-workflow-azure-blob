@@ -6,6 +6,7 @@ on:
       - master
 env:
   STORAGE_ACCOUNT: 'mfegh2023'
+  AZURE_SUBSCRIPTION_ID: '351b6525-81b1-48bf-a6e8-4bd5da72e974'
 
 jobs:
   build:
@@ -24,6 +25,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
+              az account set -s ${{}}
               az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}
       - name: logout
         run: |
