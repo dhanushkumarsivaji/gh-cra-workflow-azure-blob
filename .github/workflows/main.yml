@@ -23,9 +23,9 @@ jobs:
       - name: Upload to the storage account
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: 2.30.0
           inlineScript: |
-              az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }} --subscription ${{ env.AZURE_SUBSCRIPTION_ID }}
+              az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}
       - name: logout
         run: |
               az logout
