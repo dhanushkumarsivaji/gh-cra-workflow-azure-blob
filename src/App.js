@@ -25,8 +25,8 @@ function App() {
 export default App;
 
 // {
-//   "clientId": "65611a17-fcdc-4262-81c2-d11823de3838",
-//   "clientSecret": "o688Q~xl9cjHb.ava-.3dajbo6NGl57OKN~U3bp6",
+//   "clientId": "d70c0c48-b439-43a4-a1d6-b866e0885622",
+//   "clientSecret": "E-38Q~KMGh~N8M2j9ZaRQ5~h5hIQjVrXI2witb6L",
 //   "subscriptionId": "351b6525-81b1-48bf-a6e8-4bd5da72e974",
 //   "tenantId": "39de4c31-5af6-43b4-8418-bb6a45179340",
 //   "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",

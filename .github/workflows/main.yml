@@ -5,7 +5,7 @@ on:
     branches:
       - master
 env:
-  STORAGE_ACCOUNT: 'mfegh2023'
+  STORAGE_ACCOUNT: 'ghcrablobcdn'
   AZURE_SUBSCRIPTION_ID: '351b6525-81b1-48bf-a6e8-4bd5da72e974'
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
         with:
           azcliversion: 2.30.0
           inlineScript: |
-              az storage blob upload-batch --source ./build --destination '$web/container/latest' --account-name ${{ env.STORAGE_ACCOUNT }}
+              az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}
       - name: logout
         run: |
               az logout
